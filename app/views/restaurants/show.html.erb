@@ -1,0 +1,14 @@
+<div class="spacer"></div>
+
+<div class="container">
+  <div class="card">
+    <h2><%= @restaurant.name %></h2>
+    <h3><%= @restaurant.address %></h3>
+    <p><%= @restaurant.phone_number %></p>
+    <p><%= @restaurant.category %></p>
+  </div>
+</div>
+
+<div class="spacer"></div>
+
+<%= link_to "Add Review", new_restaurant_review_path(@restaurant), class: "btn btn-primary m-3"  %>
