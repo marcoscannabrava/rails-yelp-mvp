@@ -10,5 +10,17 @@
 </div>
 
 <div class="spacer"></div>
+<h5 class="mx-5">Add New Review</h5>
+<%= render template: "reviews/_form", restaurant: @restaurant, review: @review %>
 
-<%= link_to "Add Review", new_restaurant_review_path(@restaurant), class: "btn btn-primary m-3"  %>
+<%# link_to "Add Review", new_restaurant_review_path(@restaurant), class: "btn btn-primary m-3" %>
+<div class="spacer"></div>
+
+<div class="container">
+  <% @restaurant.reviews.each do |r| %>
+    <div class="card m-3">
+      <h6 class="mx-3">Rating: <%= r.rating %></h6>
+      <p class="m-3"><%= r.content %></p>
+    </div>
+  <% end %>
+</div>
